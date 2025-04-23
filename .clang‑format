@@ -1,0 +1,50 @@
+# .clang-format
+---
+# Base style and language
+BasedOnStyle: LLVM
+Language:        Cpp
+
+# Indentation
+IndentWidth:     4    # 4 spaces per indent level
+TabWidth:        4
+UseTab:          Never
+
+# Line breaking
+ColumnLimit:     100  # wrap at 100 columns
+BreakBeforeBraces: Attach
+AllowShortFunctionsOnASingleLine: InlineOnly
+
+# Pointer/reference alignment
+PointerAlignment: Left    # `T* p` not `T *p`
+DerivePointerAlignment: false
+
+# Spaces
+SpacesInParentheses:      false
+SpaceBeforeParens:        ControlStatements  # `if (` but `Foo(`
+SpaceInEmptyParentheses:  false
+SpacesInAngles:           false            # `vector<int>` not `vector< int >`
+
+# Includes
+SortIncludes:       true
+IncludeBlocks:      Preserve
+IncludeCategories:
+  - Regex:           '^<.*\.h>'
+    Priority:        1
+  - Regex:           '^<.*>'
+    Priority:        2
+  - Regex:           '.*'
+    Priority:        3
+
+# Comments
+ReflowComments:     true
+
+# C++11/14/17 modernizations
+ConstructorInitializerIndentWidth: 4
+BinPackArguments:  false
+BinPackParameters: false
+
+# Keep macros and enum values tidy
+AlignAfterOpenBracket: Align
+
+# End of file
+...
